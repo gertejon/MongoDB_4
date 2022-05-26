@@ -20,7 +20,16 @@ separate()
 print("EJERCICIO 1")
 print(" ")
 
-
+#aux = coll.create_index({"products."})
+aux = coll.find( {"$expr": {"$gt":[{"$size":"$products"}, 4]} } )
+cont = 0
+print("Busqueda realizada. Imprimiendo solo 10 compañias del listado: ")
+for i in aux:
+    if cont < 10:
+        print(i["name"])
+        cont+=1
+    else:
+        break
 
 print(" ")
 separate()
@@ -30,7 +39,17 @@ separate()
 print("EJERCICIO 2")
 print(" ")
 
+aux = coll.aggregate([{"$group" : {"_id" : "$name", "count" : {"$sum" : 1}}}])
+print("Busqueda realizada. Imprimiendo solo 10 compañias del listado: ")
 
+cont = 0
+for i in aux:
+    if cont < 10:
+        if i["count"] > 1:
+            print(i["_id"], ",veces que aparece: ", i["count"])
+            cont += 1
+    else:
+        break
 
 print(" ")
 separate()
@@ -40,7 +59,16 @@ separate()
 print("EJERCICIO 3")
 print(" ")
 
+aux = coll.aggregate([ {"$addFields" : {"totalProducts" : {"$size" : "$products"}}} , {"$sort" : {"totalProducts" : -1}} ])
+print("Busqueda realizada. Imprimiendo (de más a menos) solo 10 compañias del listado: ")
 
+cont = 0
+for i in aux:
+    if cont < 10:
+        print(i["name"], ",numero de productos: ", len(i["products"]))
+        cont += 1
+    else:
+        break
 
 print(" ")
 separate()
