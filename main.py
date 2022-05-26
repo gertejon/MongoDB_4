@@ -16,7 +16,6 @@ def separate():
     print("_______________________________________________________________________")
 
 # EJERCICIO 1
-separate()
 print("EJERCICIO 1")
 print(" ")
 
@@ -26,7 +25,6 @@ print(" ")
 separate()
 
 # EJERCICIO 2
-separate()
 print("EJERCICIO 2")
 print(" ")
 
@@ -36,7 +34,6 @@ print(" ")
 separate()
 
 # EJERCICIO 3
-separate()
 print("EJERCICIO 3")
 print(" ")
 
@@ -46,37 +43,42 @@ print(" ")
 separate()
 
 # EJERCICIO 4
-separate()
 print("EJERCICIO 4")
 print(" ")
 
-
+companies = coll.find({"partners": {"$gt": {"$size": 0}}}).limit(10)
+print("Mostrant 10 de les companyies: ")
+for company in companies:
+    print(company["name"])
 
 print(" ")
 separate()
 
 # EJERCICIO 5
-separate()
 print("EJERCICIO 5")
 print(" ")
 
-
+companies = coll.find({"acquisitions": {"$size": 3}}).limit(10)
+print("Mostrant 10 de les companyies: ")
+for company in companies:
+    print(company["name"])
 
 print(" ")
 separate()
 
 # EJERCICIO 6
-separate()
 print("EJERCICIO 6")
 print(" ")
 
-
+companies = coll.find({"category_code": "advertising", "competitions.3": {"$exists": True}}).limit(10)
+print("Mostrant 10 de les companyies: ")
+for company in companies:
+    print(company["name"])
 
 print(" ")
 separate()
 
 # EJERCICIO 7
-separate()
 print("EJERCICIO 7")
 print(" ")
 
@@ -86,7 +88,6 @@ print(" ")
 separate()
 
 # EJERCICIO 8
-separate()
 print("EJERCICIO 8")
 print(" ")
 
