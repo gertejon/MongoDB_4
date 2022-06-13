@@ -19,8 +19,7 @@ def separate():
     print("_______________________________________________________________________")
 
 
-#option = 1
-#while 0 < int(option) < 7:
+
 while True:
     option = input("Selecciona una opció (1-6): ")
 
