@@ -115,14 +115,14 @@ while True:
         separate()
 
     elif int(option) == 7:
-        print("EJERCICIO 6")
+        print("EJERCICIO 7")
         print(" ")
 
         print(" ")
         separate()
 
     elif int(option) == 8:
-        print("EJERCICIO 6")
+        print("EJERCICIO 8")
         print(" ")
 
         print(" ")
