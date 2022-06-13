@@ -19,9 +19,8 @@ def separate():
     print("_______________________________________________________________________")
 
 
-
 while True:
-    option = input("Selecciona una opció (1-6): ")
+    option = input("Selecciona una opció (1-8): ")
 
     if int(option) == 1:
         print("EJERCICIO 1")
@@ -111,6 +110,20 @@ while True:
         print("Mostrant 10 de les companyies: ")
         for company in companies:
             print(company["name"])
+
+        print(" ")
+        separate()
+
+    elif int(option) == 7:
+        print("EJERCICIO 6")
+        print(" ")
+
+        print(" ")
+        separate()
+
+    elif int(option) == 8:
+        print("EJERCICIO 6")
+        print(" ")
 
         print(" ")
         separate()
